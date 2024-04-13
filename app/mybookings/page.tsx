@@ -32,7 +32,7 @@ export default function MyBookings() {
                   key={index}
                   className="mx-10 my-2"
                 >
-                  <div className="flex">
+                  <div className="sm:flex">
                     <CardMedia className="m-4">
                       <Image
                         src={generateCarImageUrl(element.car[0], "")}
@@ -43,7 +43,7 @@ export default function MyBookings() {
                         className="object-contain"
                       />
                     </CardMedia>
-                    <CardContent className="flex">
+                    <CardContent className="sm:flex">
                       <Typography margin={2} variant="h5" component="div">
                         Make: {element.car[0].make}
                       </Typography>
