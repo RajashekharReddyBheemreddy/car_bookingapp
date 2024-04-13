@@ -26,7 +26,8 @@ export const config = {
     '/signin',
     '/signup',
     '/profile',
-    '/booking',
+    '/booking/:path*',
     '/mybookings',
+    '/reserve/:path*'
   ]
 }

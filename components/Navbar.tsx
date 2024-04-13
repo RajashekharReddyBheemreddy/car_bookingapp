@@ -16,7 +16,9 @@ export default function Navbar() {
   if (typeof window !== undefined) {
     try {
       getEmail = localStorage?.getItem("email");
-    } catch (error) {}
+    } catch (error) {
+      console.log('Fetching Data')
+    }
   }
   useEffect(() => {
     if (getEmail) {

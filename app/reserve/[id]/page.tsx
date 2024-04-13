@@ -21,7 +21,9 @@ export default function Reserve() {
     try {
       const getEmail = localStorage?.getItem("email") || "";
       emailId = JSON.parse(getEmail);
-    } catch (error) {}
+    } catch (error) {
+      console.log('Fetching data')
+    }
   }
 
   const [user, setUser] = useState({

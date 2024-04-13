@@ -27,7 +27,11 @@ export default function MyBookings() {
           {data ? (
             <div>
               {data.map((element: any, index: number) => (
-                <Card sx={{ maxWidth: 1000 }} key={index} className="mx-10 my-2">
+                <Card
+                  sx={{ maxWidth: 1000 }}
+                  key={index}
+                  className="mx-10 my-2"
+                >
                   <div className="flex">
                     <CardMedia className="m-4">
                       <Image
@@ -62,10 +66,12 @@ export default function MyBookings() {
                   <CardContent>
                     <p className="flex">
                       <span className="self-start text-[14px] mx-2 font-semibold">
-                        Pick up: {element.start.slice(0, 10)} at {element.start.slice(11, element.start.length)}
+                        Pick up: {element.start.slice(0, 10)} at{" "}
+                        {element.start.slice(11, element.start.length)}
                       </span>
                       <span className="self-start text-[14px] mx-2 font-semibold">
-                        Return: {element.end.slice(0, 10)} by {element.end.slice(11, element.end.length)}
+                        Return: {element.end.slice(0, 10)} by{" "}
+                        {element.end.slice(11, element.end.length)}
                       </span>
                     </p>
                     <p className="flex mt-2 text-[28px] font-extrabold">
@@ -83,7 +89,8 @@ export default function MyBookings() {
                       </span>
                     </p>
                     <p className="text-[16px] font-medium">
-                      Booking Refernce id: BA{element._id.slice(2, element._id.length)}
+                      Booking Refernce id: BA
+                      {element._id.slice(2, element._id.length)}
                     </p>
                   </CardContent>
                 </Card>
