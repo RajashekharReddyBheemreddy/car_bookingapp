@@ -156,24 +156,28 @@ export default function Reserve() {
               />
             </div>
             <div className="my-5">
-              <div className="flex mx-5">
-                <h2 className="mx-4">Pick up</h2>
-                <h2 className="mx-40">Return</h2>
+             <p className="mx-5">Timings</p>
+              <div className="sm:flex mx-5">
+                <DatePicker
+                  showTime
+                  onOk={(value) =>
+                    setUser({
+                      ...user,
+                      start: value?.format("YYYY-MM-DDTHH:mm"),
+                    })
+                  }
+                  placeholder="Pick up Time & Date"
+                  className="mt-2 mr-4 -ml-1 py-2 pl-2 pr-1"
+                />
+                <DatePicker
+                  showTime
+                  placeholder="Return Time & Date"
+                  onOk={(value) =>
+                    setUser({ ...user, end: value?.format("YYYY-MM-DDTHH:mm") })
+                  }
+                  className="mt-2 sm:mx-4 py-2 pl-2 pr-1"
+                />
               </div>
-              <DatePicker
-                showTime
-                onOk={(value) =>
-                  setUser({ ...user, start: value?.format("YYYY-MM-DDTHH:mm") })
-                }
-                className="mt-2 mx-4 py-2 pl-2 pr-1"
-              />
-              <DatePicker
-                showTime
-                onOk={(value) =>
-                  setUser({ ...user, end: value?.format("YYYY-MM-DDTHH:mm") })
-                }
-                className="mt-2 mx-4 py-2 pl-2 pr-1"
-              />
             </div>
           </div>
         </div>
@@ -181,7 +185,7 @@ export default function Reserve() {
       <CustomButton
         btnType="submit"
         title="Book now"
-        containerStyles="bg-primary-blue text-white rounded-full mt-4 ml-48"
+        containerStyles="bg-primary-blue text-white rounded-full mt-4 ml-10 sm:ml-48"
       />
     </form>
   );
